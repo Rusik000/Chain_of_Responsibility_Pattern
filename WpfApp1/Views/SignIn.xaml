@@ -41,7 +41,7 @@
 
                     </i:Interaction.Triggers>
                 </TextBox>
-                <Button Content="Sign In" FontSize="16"   Canvas.Top="240" Canvas.Left="80" Background="LightGreen" Width="100" Height="30" Margin="5"></Button>
+                <Button Content="Sign In" FontSize="16"   Canvas.Top="240" Canvas.Left="80" Background="LightGreen" Width="100" Height="30" Margin="5" Command="{Binding SigInCompleted}"></Button>
             </StackPanel>
         </Canvas>
     </Grid>

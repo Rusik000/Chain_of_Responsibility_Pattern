@@ -12,14 +12,13 @@ namespace WpfApp1.Models
         {
 
         }
-        public User(string stepsofChain, string fullName, string username)
+
+        public User(string fullName, string username)
         {
-            StepsofChain = stepsofChain;
             FullName = fullName;
             Username = username;
         }
 
-        public string StepsofChain { get; set; }
         public string FullName { get; set; }
         public string Username { get; set; }
 

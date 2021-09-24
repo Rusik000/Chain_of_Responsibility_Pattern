@@ -23,7 +23,7 @@
             </Grid.Background>
 
             <Canvas>
-                <Label Content="Welcome Back" FontSize="20" Canvas.Top="150" Canvas.Left="40" FontFamily="Italic" FontWeight="DemiBold" Width="192"></Label>
+                <Label Content="Welcome " HorizontalContentAlignment="Center" FontSize="20" Canvas.Top="150" Canvas.Left="40" FontFamily="Italic" FontWeight="DemiBold" Width="192"></Label>
                 <TextBlock  Text="Please login  with  your personal info"  Height="32" Width="224" FontSize="13" Canvas.Top="200" Canvas.Left="30" >
 
                 </TextBlock>

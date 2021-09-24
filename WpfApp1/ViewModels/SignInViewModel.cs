@@ -1,11 +1,15 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
-
+using System.Collections.ObjectModel;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 using System.Windows.Media;
 using WpfApp1.Command;
+using WpfApp1.Models;
 
 namespace WpfApp1.ViewModels
 {
@@ -19,6 +23,16 @@ namespace WpfApp1.ViewModels
         public RelayCommand MouseEnterPassword { get; set; }
         public RelayCommand MouseLeavePassword { get; set; }
 
+        public RelayCommand SigInCompleted { get; set; }
+
+        public ObservableCollection<User> new_User_List = new ObservableCollection<User>();
+
+        public ObservableCollection<User> _User_List { get; set; }
+        public ObservableCollection<User> User_List
+        {
+            get { return _User_List; }
+            set { _User_List = value; }
+        }
         public SignInViewModel()
         {
             MouseEnterUsername = new RelayCommand((sender) =>
@@ -41,6 +55,25 @@ namespace WpfApp1.ViewModels
             MouseLeavePassword = new RelayCommand((sender) =>
             {
                 MouseLeave_Password();
+
+            });
+
+
+            SigInCompleted = new RelayCommand((sender) =>
+            {
+                User_List = Deserialize();
+                foreach (var users in User_List)
+                {
+
+                    if (SignWindow.UsernameTxtBx.Text == users.Username && SignWindow.PasswordTxtBx.Text==users.Password)
+                    {
+                        MessageBox.Show($"Welcome {users.FullName}");
+                    }
+                    else
+                    {
+                        MessageBox.Show("Sorry you don't have account:(");
+                    }
+                }
 
             });
 
@@ -102,6 +135,20 @@ namespace WpfApp1.ViewModels
         }
 
 
+        public ObservableCollection<User> Deserialize()
+        {
 
+            var serializer = new JsonSerializer();
+
+            using (StreamReader sr = new StreamReader("User.json"))
+            {
+                using (var jr = new JsonTextReader(sr))
+                {
+                    new_User_List = serializer.Deserialize<ObservableCollection<User>>(jr);
+                }
+            }
+
+            return new_User_List;
+        }
     }
 }

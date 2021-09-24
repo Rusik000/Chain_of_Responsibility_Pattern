@@ -31,18 +31,18 @@ namespace WpfApp1.Chain_of_Responsibility_Pattern
             public void User_if_else(User user)
             {
 
-                string data = File.ReadAllText($"../../User.json");
+                //string data = File.ReadAllText($"../../User.json");
 
-                if (user.StepsofChain == "Order Chain" && !string.IsNullOrEmpty(user.FullName) && !string.IsNullOrEmpty(user.Password))
-                {
-                    NextChain.User_if_else(user);
-                }
+                //if (user.StepsofChain == "Order Chain" && !string.IsNullOrEmpty(user.FullName) && !string.IsNullOrEmpty(user.Password))
+                //{
+                //    NextChain.User_if_else(user);
+                //}
 
-                else
-                {
-                    //NextChain.User_if_else(user);
-                    MessageBox.Show($"Can not order", "Third Chain", MessageBoxButton.OK, MessageBoxImage.Warning);
-                }
+                //else
+                //{
+                //    //NextChain.User_if_else(user);
+                //    MessageBox.Show($"Can not order", "Third Chain", MessageBoxButton.OK, MessageBoxImage.Warning);
+                //}
             }
         }
 
@@ -58,17 +58,17 @@ namespace WpfApp1.Chain_of_Responsibility_Pattern
 
             public void User_if_else(User user)
             {
-                string data = File.ReadAllText($"../../User.json");
-                if (user.StepsofChain == "SingIn Chain" && !string.IsNullOrEmpty(user.Username) && !string.IsNullOrEmpty(user.Password))
-                {
-                    NextChain.User_if_else(user);
-                }
-                else
-                {
-                    // NextChain.User_if_else(user);
-                    MessageBox.Show($"Can not sing in", "Second Chain", MessageBoxButton.OK, MessageBoxImage.Warning);
+                //string data = File.ReadAllText($"../../User.json");
+                //if (user.StepsofChain == "SingIn Chain" && !string.IsNullOrEmpty(user.Username) && !string.IsNullOrEmpty(user.Password))
+                //{
+                //    NextChain.User_if_else(user);
+                //}
+                //else
+                //{
+                //    // NextChain.User_if_else(user);
+                //    MessageBox.Show($"Can not sing in", "Second Chain", MessageBoxButton.OK, MessageBoxImage.Warning);
 
-                }
+                //}
 
             }
         }
@@ -87,16 +87,16 @@ namespace WpfApp1.Chain_of_Responsibility_Pattern
 
             public void User_if_else(User user)
             {
-                string data = File.ReadAllText($"../../User.json");
-                if (user.StepsofChain == "SingUp Chain" && user.FullName != string.Empty && user.Username != string.Empty && user.Password != string.Empty )
-                {
-                    NextChain.User_if_else(user);
-                }
-                if (user.StepsofChain == "SingUp Chain" && (user.FullName == string.Empty || user.Username == string.Empty || user.Password == string.Empty))
-                {
-                    //  NextChain.User_if_else(user);
-                    MessageBox.Show($"Can not sing up", "First Chain", MessageBoxButton.OK, MessageBoxImage.Warning);
-                }
+                //string data = File.ReadAllText($"../../User.json");
+                //if (user.StepsofChain == "SingUp Chain" && user.FullName != string.Empty && user.Username != string.Empty && user.Password != string.Empty)
+                //{
+                //    NextChain.User_if_else(user);
+                //}
+                //if (user.StepsofChain == "SingUp Chain" && (user.FullName == string.Empty || user.Username == string.Empty || user.Password == string.Empty))
+                //{
+                //    //  NextChain.User_if_else(user);
+                //    MessageBox.Show($"Can not sing up", "First Chain", MessageBoxButton.OK, MessageBoxImage.Warning);
+                //}
             }
         }
     }

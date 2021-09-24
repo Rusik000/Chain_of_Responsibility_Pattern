@@ -18,8 +18,15 @@ namespace WpfApp1.ViewModels
         public RelayCommand PassToSignIn { get; set; }
         public RelayCommand PassToSignUp { get; set; }
 
-
         public RelayCommand PassToOrder { get; set; }
+
+
+        private User _user;
+        public User User
+        {
+            get { return _user; }
+            set { _user = value; OnPropertyChanged(); }
+        }
 
 
         public AppViewModel()
