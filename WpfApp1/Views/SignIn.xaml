@@ -5,7 +5,7 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:WpfApp1"
              mc:Ignorable="d" 
-             d:DesignHeight="419" d:DesignWidth="528" Background="WhiteSmoke">
+             d:DesignHeight="419" d:DesignWidth="539" Background="WhiteSmoke">
     <Grid>
         <Canvas>
             <TextBlock Text="Sign In" FontSize="25" Canvas.Left="210" Canvas.Top="100" >

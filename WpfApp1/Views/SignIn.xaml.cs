@@ -12,49 +12,24 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using WpfApp1.ViewModels;
 
 namespace WpfApp1
 {
     /// <summary>
-    /// Interaction logic for UserControl1.xaml
+    /// Interaction logic for SignIn.xaml
     /// </summary>
-    public partial class UserControl1 : UserControl
+    public partial class SignIn : UserControl
     {
-        public UserControl1()
+        public SignIn()
         {
             InitializeComponent();
-        }
-
-        private void FullnameTxtBx_MouseEnter(object sender, MouseEventArgs e)
-        {
-            if (FullnameTxtBx.Text == "Fullname")
-            {
-                FullnameTxtBx.Text = null;
-
-
-
-                Color color1 = new Color();
-                color1 = Color.FromArgb(255, 37, 191, 191);
-
-                FullnameTxtBx.Foreground = new SolidColorBrush(color1);
-            }
-        }
-
-        private void FullnameTxtBx_MouseLeave(object sender, MouseEventArgs e)
-        {
-            if (FullnameTxtBx.Text == "")
-            {
-
-                Color color2 = new Color();
-                color2 = Color.FromArgb(255, 110, 127, 128);
-
-                FullnameTxtBx.Text = "Fullname";
-                FullnameTxtBx.Foreground = new SolidColorBrush(color2);
-            }
-        }
+            this.DataContext = new SiginViewModel();
+        }      
 
         private void UsernameTxtBx_MouseEnter(object sender, MouseEventArgs e)
         {
+
             if (UsernameTxtBx.Text == "Username")
             {
                 UsernameTxtBx.Text = null;
@@ -70,6 +45,7 @@ namespace WpfApp1
 
         private void UsernameTxtBx_MouseLeave(object sender, MouseEventArgs e)
         {
+
             if (UsernameTxtBx.Text == "")
             {
 

@@ -5,8 +5,10 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WpfApp1"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="MainWindow" Height="450" Width="800" MaxWidth="800" MaxHeight="450" MinHeight="450" MinWidth="800" WindowStartupLocation="CenterScreen">
     <Grid>
+
+       
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*"/>
             <ColumnDefinition Width="2*"/>
@@ -25,8 +27,13 @@
                 <TextBlock  Text="Please login  with  your personal info"  Height="32" Width="224" FontSize="13" Canvas.Top="200" Canvas.Left="30" >
 
                 </TextBlock>
-                <Button Content="Sign In" FontSize="30" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Canvas.Top="240" Canvas.Left="80" Background="LightGreen"></Button>
+                <Button   Command="{Binding ConvertBtn}"  Name="CovertBtn"  Content="Sign In" FontSize="30" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Canvas.Top="240" Canvas.Left="80" Background="LightGreen"></Button>
             </Canvas>
+        </Grid>
+
+
+        <Grid Grid.Column="1">
+            <local:UserControl1></local:UserControl1>
         </Grid>
     </Grid>
 </Window>
