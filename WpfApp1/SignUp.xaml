@@ -1,0 +1,28 @@
+﻿<UserControl x:Class="WpfApp1.UserControl1"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:WpfApp1"
+             mc:Ignorable="d" 
+             d:DesignHeight="419" d:DesignWidth="528" Background="WhiteSmoke">
+    <Grid>
+        <Canvas>
+            <TextBlock Text="Create Account" FontSize="25" Canvas.Left="170" Canvas.Top="100" >
+                <TextBlock.Foreground>
+                    <LinearGradientBrush>
+                        <GradientStop Color="#007991" Offset="1"/>
+                        <GradientStop Color="#78ffd6" Offset="0"/>
+                    </LinearGradientBrush>
+                </TextBlock.Foreground>
+            </TextBlock>
+
+            <StackPanel Canvas.Left="160" Canvas.Top="150">
+                <TextBox Name="FullnameTxtBx"  Height="30" Width="200"  Margin="5"  FontSize="16" MouseEnter="FullnameTxtBx_MouseEnter" MouseLeave="FullnameTxtBx_MouseLeave"> Full Name</TextBox>
+                <TextBox  Name="UsernameTxtBx" Height="30" Width="200"  Margin="5" FontSize="16"  MouseEnter="UsernameTxtBx_MouseEnter" MouseLeave="UsernameTxtBx_MouseLeave"> Username</TextBox>
+                <TextBox  Name="PasswordTxtBx" Height="30" Width="200"  Margin="5" FontSize="16" MouseEnter="PasswordTxtBx_MouseEnter" MouseLeave="PasswordTxtBx_MouseLeave" > Password</TextBox>
+                <Button Content="Sign Up" FontSize="16"   Canvas.Top="240" Canvas.Left="80" Background="LightGreen" Width="100" Height="30" Margin="5"></Button>
+            </StackPanel>
+        </Canvas>
+    </Grid>
+</UserControl>
