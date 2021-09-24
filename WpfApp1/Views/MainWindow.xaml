@@ -27,13 +27,15 @@
                 <TextBlock  Text="Please login  with  your personal info"  Height="32" Width="224" FontSize="13" Canvas.Top="200" Canvas.Left="30" >
 
                 </TextBlock>
-                <Button   Command="{Binding ConvertBtn}"  Name="CovertBtn"  Content="Sign In" FontSize="30" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Canvas.Top="240" Canvas.Left="80" Background="LightGreen"></Button>
+                <Button  Command="{Binding PassToSignIn}"  Name="SignInBtn"  Content="Sign In" FontSize="30"  Canvas.Top="240" Canvas.Left="80" Background="LightGreen" Width="108"></Button>
+                <Button Command="{Binding PassToSignUp}"   Name="SignUpBtn"   Content="Sign Up" FontSize="30"  Canvas.Top="290" Canvas.Left="80" Background="LightGreen"></Button>
+                <Button  Name="OrderBtn"   Content="Order" FontSize="30"  Canvas.Top="340" Canvas.Left="80" Background="LightGreen" Width="108"></Button>
             </Canvas>
         </Grid>
 
 
-        <Grid Grid.Column="1">
-            <local:UserControl1></local:UserControl1>
+        <Grid Grid.Column="1" Name="MyGrid">
+           
         </Grid>
     </Grid>
 </Window>

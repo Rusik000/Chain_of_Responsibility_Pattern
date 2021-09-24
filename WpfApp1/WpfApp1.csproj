@@ -60,7 +60,7 @@
     <Compile Include="Chain_of_Responsibility_Pattern\Chain_Responsibility.cs" />
     <Compile Include="Command\RelayCommand.cs" />
     <Compile Include="Models\User.cs" />
-    <Compile Include="ViewModels\SiginViewModel.cs" />
+    <Compile Include="ViewModels\SignInViewModel.cs" />
     <Compile Include="ViewModels\SignUpViewModel.cs" />
     <Compile Include="Views\SignIn.xaml.cs">
       <DependentUpon>SignIn.xaml</DependentUpon>

@@ -24,7 +24,7 @@ namespace WpfApp1
         public SignIn()
         {
             InitializeComponent();
-            this.DataContext = new SiginViewModel();
+            
         }      
 
         private void UsernameTxtBx_MouseEnter(object sender, MouseEventArgs e)
@@ -33,9 +33,6 @@ namespace WpfApp1
             if (UsernameTxtBx.Text == "Username")
             {
                 UsernameTxtBx.Text = null;
-
-
-
                 Color color1 = new Color();
                 color1 = Color.FromArgb(255, 37, 191, 191);
 

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace WpfApp1.ViewModels
 {
-    public class SignUpViewModel:BaseViewModel
+    public class SignUpViewModel : BaseViewModel
     {
 
     }

@@ -17,8 +17,8 @@ namespace WpfApp1.Chain_of_Responsibility_Pattern
             void SetNextChain(IChain chain);
 
             void User_if_else(User user);
-
         }     
+
         class Order_Chain : IChain
         {
             public IChain NextChain { get; set; }
@@ -35,9 +35,7 @@ namespace WpfApp1.Chain_of_Responsibility_Pattern
 
                 if (user.StepsofChain == "Order Chain" && !string.IsNullOrEmpty(user.FullName) && !string.IsNullOrEmpty(user.Password))
                 {
-
                     NextChain.User_if_else(user);
-
                 }
 
                 else
