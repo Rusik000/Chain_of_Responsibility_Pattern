@@ -3,7 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
-             xmlns:local="clr-namespace:WpfApp1"
+             xmlns:local="clr-namespace:WpfApp1" xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
              mc:Ignorable="d" 
              d:DesignHeight="419" d:DesignWidth="539" Background="WhiteSmoke">
     <Grid>
@@ -18,8 +18,29 @@
             </TextBlock>
 
             <StackPanel Canvas.Left="160" Canvas.Top="150">
-                <TextBox  Name="UsernameTxtBx" Height="30" Width="200"  Margin="5" FontSize="16"  MouseEnter="UsernameTxtBx_MouseEnter" MouseLeave="UsernameTxtBx_MouseLeave" >Username</TextBox>
-                <TextBox   Name="PasswordTxtBx"  Height="30" Width="200"  Margin="5" FontSize="16"  MouseEnter="PasswordTxtBx_MouseEnter" MouseLeave="PasswordTxtBx_MouseLeave">Password</TextBox>
+                <TextBox  Name="UsernameTxtBx" Height="30" Width="200"  Margin="5" FontSize="16" Text="Username"  >
+                    <i:Interaction.Triggers>
+                        <i:EventTrigger EventName="MouseEnter" >
+                            <i:InvokeCommandAction Command="{Binding MouseEnterUsername}" />
+                        </i:EventTrigger>
+                        <i:EventTrigger EventName="MouseLeave" >
+                            <i:InvokeCommandAction Command="{Binding MouseLeaveUsername}" />
+                        </i:EventTrigger>
+
+                    </i:Interaction.Triggers>
+                </TextBox>
+
+                <TextBox  Name="PasswordTxtBx"  Height="30" Width="200"  Margin="5" FontSize="16"  Text="Password" >
+                    <i:Interaction.Triggers>
+                        <i:EventTrigger EventName="MouseEnter" >
+                            <i:InvokeCommandAction Command="{Binding MouseEnterPassword}" />
+                        </i:EventTrigger>
+                        <i:EventTrigger EventName="MouseLeave" >
+                            <i:InvokeCommandAction Command="{Binding MouseLeavePassword}" />
+                        </i:EventTrigger>
+
+                    </i:Interaction.Triggers>
+                </TextBox>
                 <Button Content="Sign In" FontSize="16"   Canvas.Top="240" Canvas.Left="80" Background="LightGreen" Width="100" Height="30" Margin="5"></Button>
             </StackPanel>
         </Canvas>
