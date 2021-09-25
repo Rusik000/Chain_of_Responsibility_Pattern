@@ -17,17 +17,14 @@ using WpfApp1.ViewModels;
 namespace WpfApp1
 {
     /// <summary>
-    /// Interaction logic for MainWindow.xaml
+    /// Interaction logic for Order.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class Order : UserControl
     {
-        public MainWindow()
+        public Order()
         {
             InitializeComponent();
-            this.DataContext = new AppViewModel(){ MainWindow = this};
-
+            DataContext = new OrderViewModel() { OrderWindow = this };
         }
-
-        
     }
 }

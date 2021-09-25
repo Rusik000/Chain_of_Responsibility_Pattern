@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Media;
+using WpfApp1.Chain_of_Responsibility_Pattern;
 using WpfApp1.Command;
 using WpfApp1.Models;
 
@@ -15,7 +16,10 @@ namespace WpfApp1.ViewModels
 {
     public class SignInViewModel : BaseViewModel
     {
+
+
         public SignIn SignWindow { get; set; }
+
 
         public RelayCommand MouseEnterUsername { get; set; }
 
@@ -33,6 +37,8 @@ namespace WpfApp1.ViewModels
             get { return _User_List; }
             set { _User_List = value; }
         }
+
+        string stepsofChain = "SingIn Chain";
         public SignInViewModel()
         {
             MouseEnterUsername = new RelayCommand((sender) =>
@@ -62,19 +68,50 @@ namespace WpfApp1.ViewModels
             SigInCompleted = new RelayCommand((sender) =>
             {
                 User_List = Deserialize();
-                foreach (var users in User_List)
+                if (User_List != null)
                 {
 
-                    if (SignWindow.UsernameTxtBx.Text == users.Username && SignWindow.PasswordTxtBx.Text==users.Password)
+                    foreach (var users in User_List)
                     {
-                        MessageBox.Show($"Welcome {users.FullName}");
+
+                        if (SignWindow.UsernameTxtBx.Text == users.Username && SignWindow.PasswordTxtBx.Text == users.Password)
+                        {
+                            MessageBox.Show($"Welcome {users.FullName}");
+
+                        }
                     }
-                    else
-                    {
-                        MessageBox.Show("Sorry you don't have account:(");
-                    }
+
+                }
+                else
+                {
+                    MessageBox.Show("Sorry you don't have account  ");
                 }
 
+                if (User_List != null)
+                {
+
+
+
+                    IChain chain = new SingUp_Chain();
+                    IChain chain2 = new SingIn_Chain();
+                    IChain chain3 = new Order_Chain();
+
+                    chain.SetNextChain(chain2);
+                    chain2.SetNextChain(chain3);
+
+
+                    foreach (var users in User_List)
+                    {
+
+                        if (SignWindow.UsernameTxtBx.Text == users.Username && SignWindow.PasswordTxtBx.Text == users.Password)
+                        {
+                            User User = new User(users.Username, stepsofChain, users.Password);
+                            chain2.User_if_else(User);
+                        }
+                    }
+
+
+                }
             });
 
         }
@@ -140,7 +177,7 @@ namespace WpfApp1.ViewModels
 
             var serializer = new JsonSerializer();
 
-            using (StreamReader sr = new StreamReader("User.json"))
+            using (var sr = new StreamReader("User.json"))
             {
                 using (var jr = new JsonTextReader(sr))
                 {

@@ -69,6 +69,11 @@
     <Compile Include="Chain_of_Responsibility_Pattern\Chain_Responsibility.cs" />
     <Compile Include="Command\RelayCommand.cs" />
     <Compile Include="Models\User.cs" />
+    <Compile Include="Views\Order.xaml.cs">
+      <DependentUpon>Order.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ViewModels\OrderViewModel.cs" />
+    <Compile Include="Models\Product.cs" />
     <Compile Include="ViewModels\SignInViewModel.cs" />
     <Compile Include="ViewModels\SignUpViewModel.cs" />
     <Compile Include="Views\SignIn.xaml.cs">
@@ -79,6 +84,10 @@
     </Compile>
     <Compile Include="ViewModels\AppViewModel.cs" />
     <Compile Include="ViewModels\BaseViewModel.cs" />
+    <Page Include="Views\Order.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Views\MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -128,5 +137,11 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup />
+  <ItemGroup>
+    <Resource Include="Images\Bizon.jpg" />
+    <Resource Include="Images\Cola.jpg" />
+    <Resource Include="Images\Lays.jpg" />
+    <Resource Include="Images\Snickers.jpg" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

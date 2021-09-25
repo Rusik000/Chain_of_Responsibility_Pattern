@@ -13,6 +13,7 @@ namespace WpfApp1.ViewModels
 {
     public class AppViewModel : BaseViewModel
     {
+        public SignInViewModel SignInView { get; set; }
         public MainWindow MainWindow { get; set; }
 
         public RelayCommand PassToSignIn { get; set; }
@@ -42,6 +43,7 @@ namespace WpfApp1.ViewModels
                 }
 
                 MainWindow.MyGrid.Children.Add(signIn);
+                MainWindow.OrderBtn.IsEnabled = true;
 
             });
             PassToSignUp = new RelayCommand((sender) =>
@@ -57,6 +59,20 @@ namespace WpfApp1.ViewModels
                 MainWindow.MyGrid.Children.Add(signUp);
 
             });
+            PassToOrder = new RelayCommand((sender) =>
+            {
+                Order order = new Order();
+
+
+                if (MainWindow.MyGrid.Children.Count != 0)
+                {
+                    MainWindow.MyGrid.Children.RemoveAt(MainWindow.MyGrid.Children.Count - 1);
+                }
+
+                MainWindow.MyGrid.Children.Add(order);
+
+            });
+            
         }
 
 
